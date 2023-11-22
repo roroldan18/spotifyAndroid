@@ -11,8 +11,8 @@ class MainSong : AppCompatActivity() {
         setContentView(R.layout.activity_main_song)
 
         // Recuperar datos del Intent
-        val imageSrc = intent.getIntExtra("imageSrc", R.drawable.default_image_icon_missing_picture_page_vector_40546530) // Reemplaza con el recurso de imagen predeterminado
-        val songTitle = intent.getStringExtra("songTitle")
+        val imageSrc = intent.getIntExtra("imageResId", R.drawable.default_image_icon_missing_picture_page_vector_40546530) // Reemplaza con el recurso de imagen predeterminado
+        val songTitle = intent.getStringExtra("songName")
         val artistName = intent.getStringExtra("artistName")
 
         // Actualizar la interfaz con los datos recibidos

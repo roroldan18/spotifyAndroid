@@ -1,3 +1,4 @@
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -5,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica3.CardItem
+import com.example.practica3.MainSong
 import com.example.practica3.R
 
 class CardAdapter(private val cardItems: List<CardItem>) :
@@ -27,6 +29,14 @@ class CardAdapter(private val cardItems: List<CardItem>) :
         holder.cardImage.setImageResource(cardItem.imageResId)
         holder.cardSongName.text = cardItem.songName
         holder.cardArtistName.text = cardItem.artistName
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, MainSong::class.java)
+            intent.putExtra("songName", cardItem.songName)
+            intent.putExtra("artistName", cardItem.artistName)
+            intent.putExtra("imageResId", cardItem.imageResId)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

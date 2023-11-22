@@ -1,8 +1,10 @@
 package com.example.practica3
 
 import CardAdapter
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -12,11 +14,11 @@ class WelcomeView : AppCompatActivity() {
         setContentView(R.layout.activity_welcome_view)
 
         // Obtener el mensaje de bienvenida del Intent
-        val mensajeBienvenida = intent.getStringExtra("mensaje_bienvenida")
+        val usuario = intent.getStringExtra("username")
 
         // Mostrar el mensaje en un TextView u otro componente de UI
         val textViewBienvenida: AppCompatTextView = findViewById(R.id.welcome_text)
-        textViewBienvenida.text = mensajeBienvenida
+        textViewBienvenida.text = "Bienvenido, $usuario"
 
         val cardItems = listOf(
             CardItem(R.drawable.song1, "Unstoppable", "Sia"),
@@ -29,6 +31,19 @@ class WelcomeView : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.adapter = CardAdapter(cardItems)
+
+        val buttonAjuste: AppCompatButton = findViewById(R.id.settings_button)
+        buttonAjuste.setOnClickListener {
+            val intent = Intent(this, SettingsView::class.java)
+            intent.putExtra("username", "$usuario!")
+            startActivity(intent)
+        }
+
+        val buttonTime: AppCompatButton = findViewById(R.id.time_button)
+        buttonTime.setOnClickListener {
+            val intent = Intent(this, TimeView::class.java)
+            startActivity(intent)
+        }
 
     }
 }

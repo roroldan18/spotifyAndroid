@@ -29,6 +29,7 @@
            android:textSize="20dp"
            />
        <androidx.appcompat.widget.AppCompatImageButton
+           android:id="@+id/settings_button"
            android:layout_width="40dp"
            android:layout_height="40dp"
            app:srcCompat="@drawable/settings"
@@ -40,6 +41,7 @@
            tools:ignore="MissingClass" />
 
        <androidx.appcompat.widget.AppCompatImageButton
+          android:id="@+id/time_button"
            android:layout_width="40dp"
            android:layout_height="40dp"
            android:layout_margin="5dp"

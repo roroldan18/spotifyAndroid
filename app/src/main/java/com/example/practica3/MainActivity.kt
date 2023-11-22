@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             if (usernameInput == "admin" && passwordInput == "admin") {
                 // Usuario y contraseña correctos
                 val intent = Intent(this, WelcomeView::class.java)
-                intent.putExtra("mensaje_bienvenida", "¡Bienvenido, $usernameInput!")
+                intent.putExtra("username", "$usernameInput!")
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
