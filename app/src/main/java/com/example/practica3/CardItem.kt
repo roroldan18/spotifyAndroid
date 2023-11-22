@@ -1,4 +1,3 @@
 package com.example.practica3
 
-class CardItem {
-}
+data class CardItem(val imageResId: Int, val songName: String, val artistName: String)
