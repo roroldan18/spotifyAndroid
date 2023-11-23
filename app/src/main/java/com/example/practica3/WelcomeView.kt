@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -32,14 +33,14 @@ class WelcomeView : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.adapter = CardAdapter(cardItems)
 
-        val buttonAjuste: AppCompatButton = findViewById(R.id.settings_button)
+        val buttonAjuste: AppCompatImageButton  = findViewById(R.id.settings_button)
         buttonAjuste.setOnClickListener {
             val intent = Intent(this, SettingsView::class.java)
-            intent.putExtra("username", "$usuario!")
+            intent.putExtra("username", "$usuario")
             startActivity(intent)
         }
 
-        val buttonTime: AppCompatButton = findViewById(R.id.time_button)
+        val buttonTime: AppCompatImageButton = findViewById(R.id.time_button)
         buttonTime.setOnClickListener {
             val intent = Intent(this, TimeView::class.java)
             startActivity(intent)

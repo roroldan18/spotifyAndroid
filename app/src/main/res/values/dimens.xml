@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="setting_margin_start">16dp</dimen>
+    <dimen name="setting_margin_end">16dp</dimen>
+</resources>
